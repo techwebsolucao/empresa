@@ -57,4 +57,8 @@ class ProdutosController extends Controller
             ->update(['nome' => $dados['nome_produto'], 'quantidade' => $dados['quantidade']]);
         return redirect()->route('listar_produtos');
     }
+
+    public function baixarProdutos(){
+        
+    }
 }
