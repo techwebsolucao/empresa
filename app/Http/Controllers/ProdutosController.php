@@ -64,6 +64,15 @@ class ProdutosController extends Controller
     }
 
     public function baixarProdutosEscrever(Request $request){
-        
+        $dados = $request->all();
+        $coletar = DB::table('produtos')->whereIn('id', $dados['produtos'])->where('quantidade', '>', $dados['quantidade'])->get();
+
+        foreach($coletar as $tabela){
+            DB::table('produtos')
+                ->where('id', '=', $tabela->id)
+                ->update(['quantidade' => $tabela->quantidade -= $dados['quantidade']]);
+        }
+
+        return redirect()->route('');
     }
 }
