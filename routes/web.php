@@ -24,3 +24,4 @@ Route::post('/baixar-produtos', [ProdutosController::class, 'baixarProdutosEscre
 //Relatorios
 Route::get('/relatorio/{id}', [RelatorioController::class, 'index'])->name('relatorio_id');
 Route::get('/relatorios', [RelatorioController::class, 'listarRelatorios'])->name('relatorios');
+
