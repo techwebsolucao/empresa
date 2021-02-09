@@ -59,20 +59,24 @@ class ProdutosController extends Controller
     }
 
     public function baixarProdutos(){
-        $coletarDadosProdutos = DB::table('produtos')->get();
+        $coletarDadosProdutos = DB::table('produtos')->where('quantidade', '>', '0')->get();
         return view('sistema.baixaProdutos', ['produtos' => $coletarDadosProdutos]);
     }
 
     public function baixarProdutosEscrever(Request $request){
         $dados = $request->all();
-        $coletar = DB::table('produtos')->whereIn('id', $dados['produtos'])->where('quantidade', '>', $dados['quantidade'])->get();
+        $coletar = DB::table('produtos')->whereIn('id', $dados['produtos'])->where('quantidade', '>=', $dados['quantidade'])->get();
+        try {
+            foreach($coletar as $tabela){
+                DB::table('produtos')
+                    ->where('id', '=', $tabela->id)
+                    ->update(['quantidade' => $tabela->quantidade -= $dados['quantidade']]);
+            }
 
-        foreach($coletar as $tabela){
-            DB::table('produtos')
-                ->where('id', '=', $tabela->id)
-                ->update(['quantidade' => $tabela->quantidade -= $dados['quantidade']]);
+            return redirect()->route('baixar_produtos');
+        }catch (\Exception $exception){
+            return redirect()->route('baixar_produtos');
         }
 
-        return redirect()->route('');
     }
 }
