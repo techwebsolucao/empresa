@@ -12,12 +12,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/dashboard', [EntrarController::class, 'index'])->name('dashboard');
 
 //Produtos
-Route::get('/cadastrar-produto', [ProdutosController::class, 'cadastrarProduto'])->name('cadastrar_produto');
-Route::post('/cadastrar-produto', [ProdutosController::class, 'escreverProduto'])->name('escrever_produto');
-Route::post('/editar-produto', [ProdutosController::class, 'editarProduto'])->name('editar_produto');
-Route::get('/produto/{id}', [ProdutosController::class, 'buscarProduto'])->name('buscar_produto_id');
-Route::get('/produtos', [ProdutosController::class, 'listarProduto'])->name('listar_produtos');
-Route::post('/remover-produto/', [ProdutosController::class, 'removerProduto'])->name('remover_produto');
+Route::get('/cadastrar-produto', [ProdutosController::class, 'cadastrarProduto'])->name('cadastrar_produto'); #Ok
+Route::post('/cadastrar-produto', [ProdutosController::class, 'escreverProduto'])->name('escrever_produto'); #Ok
+Route::get('/editar-produto/{id}', [ProdutosController::class, 'editarProduto'])->name('editar_produto'); #Ok
+Route::post('/editar-produto-atualizar', [ProdutosController::class, 'editarProdutoEscrever'])->name('editar_produto_escrever'); #Ok
+Route::get('/produtos', [ProdutosController::class, 'listarProduto'])->name('listar_produtos'); #Ok
+Route::post('/remover-produto/', [ProdutosController::class, 'removerProduto'])->name('remover_produto'); #Ok
 
 //Relatorios
 Route::get('/relatorio/{id}', [RelatorioController::class, 'index'])->name('relatorio_id');

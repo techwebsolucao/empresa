@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Site demonstração para uma empresa">
     <meta name="author" content="Eduardo Parcianello de Avila">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Empresa - Dashboard | Listar Produtos</title>
 
@@ -47,7 +48,7 @@
                 <!-- Content Row -->
                 <div class="row col-12 card p-2">
                     <table class="table table-hover table-striped m-0">
-                        <thead class="thead-dark">
+                        <thead class="bg bg-primary text-white">
                         <tr>
                             <th scope="col">SKU</th>
                             <th scope="col">Nome produto</th>
@@ -56,13 +57,15 @@
                         </tr>
                         </thead>
                         <tbody>
+
                         @foreach($listarProdutosPaginator as $produtos)
                         <tr>
                             <th scope="row">{{$produtos->codigo_produto}}</th>
                             <td>{{$produtos->nome}}</td>
                             <td>{{$produtos->quantidade}}</td>
-                            <td><button class="btn btn-sm btn-danger" data-id="{{$produtos->id}}" id="removerProduto">Remover</button>
-                                <button class="btn btn-sm btn-primary" data-id="{{$produtos->id}}" id="editarProduto">Editar</button>
+                            <td>
+                                <button class="btn btn-sm btn-danger" data-url="{{route('remover_produto')}}" data-id="{{$produtos->id}}" id="removerProduto">Remover</button>
+                                <a class="btn btn-sm btn-primary" href="{{route('editar_produto', ['id' => $produtos->id])}}">Editar</a>
                             </td>
                         </tr>
                         @endforeach

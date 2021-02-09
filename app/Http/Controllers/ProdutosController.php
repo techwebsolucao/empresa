@@ -36,11 +36,25 @@ class ProdutosController extends Controller
 
     public function removerProduto(Request $request){
         $dados = $request->all();
+        Produtos::destroy($dados['id']);
     }
 
     public function listarProduto(){
         $coletarDadosProdutos = DB::table('produtos')->paginate(50);
-
         return view('sistema.listarProdutos', ['listarProdutosPaginator' => $coletarDadosProdutos]);
+    }
+
+    public function editarProduto($id){
+        $coletarDadosProdutoEditar = DB::table('produtos')->where('id', '=', $id)->get();
+        $coletarDadosProdutoEditarCount = DB::table('produtos')->where('id', '=', $id)->count();
+
+        return view('sistema.Produto', ['produtosEditar' => $coletarDadosProdutoEditar, 'countProduto' => $coletarDadosProdutoEditarCount]);
+    }
+
+    public function editarProdutoEscrever(Request $request){
+        $dados = $request->all();
+        DB::table('produtos')->where('id', '=', $dados['id'])
+            ->update(['nome' => $dados['nome_produto'], 'quantidade' => $dados['quantidade']]);
+        return redirect()->route('listar_produtos');
     }
 }

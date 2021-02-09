@@ -46,6 +46,7 @@
 
                 <!-- Content Row -->
                 <div class="row col-10">
+                    @if(empty($countProduto))
                     <form action="{{route('escrever_produto')}}" method="post">
                         <div class="card p-3">
                             <div class="col-sm">
@@ -63,6 +64,26 @@
                             </div>
                         </div>
                     </form>
+                    @else
+                        <form action="{{route('editar_produto_escrever')}}" method="post">
+                            <div class="card p-3">
+                                <div class="col-sm">
+                                    @csrf
+                                    @foreach($produtosEditar as $produtos)
+                                        <input hidden name="id" value="{{$produtos->id}}">
+
+                                    <p class="m-1">Nome do produto:</p>
+                                    <input class="form-control" required="required" value="{{$produtos->nome}}" type="text" name="nome_produto">
+
+                                    <p class="m-1">Quantidade:</p>
+                                    <input class="form-control" required="required" value="{{$produtos->quantidade}}" type="text" name="quantidade">
+
+                                    @endforeach
+                                    <button type="submit" class="btn btn-sm btn-primary mt-3">Editar Produto</button>
+                                </div>
+                            </div>
+                        </form>
+                        @endif
                 </div>
 
             </div>
