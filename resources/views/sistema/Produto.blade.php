@@ -59,7 +59,7 @@
                                 <p class="m-1">Codigo do produto</p>
                                 <input class="form-control" required="required" type="text" name="codigo_produto">
 
-                                <button type="submit" class="btn btn-sm btn-success mt-5">Cadastrar Produto</button>
+                                <button type="submit" class="btn btn-sm btn-success mt-3">Cadastrar Produto</button>
                             </div>
                         </div>
                     </form>
