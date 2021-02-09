@@ -46,14 +46,19 @@
             <div class="container-fluid">
                 <!-- Content Row -->
                 <div class="row col-12 card p-2">
-                    <form action="" method="post">
-                        <label>Quantidade</label>
-                        <input class="form-control" name="quantidade" type="text">
-                        <select class="selectpicker" name="produtos[]" multiple>
-                            @foreach($produtos as $tabela)
-                                <option value="{{$tabela->id}}">{{$tabela->nome}}</option>
-                            @endforeach
-                        </select>
+                    <form action="{{route('baixar_produtos_escrever')}}" method="post">
+                        @csrf
+                        <div class="col-3">
+                            <label>Quantidade</label>
+                            <input class="form-control" name="quantidade" type="text">
+                        </div>
+                        <div class="col-sm mt-2">
+                            <select class="selectpicker" name="produtos[]" multiple>
+                                @foreach($produtos as $tabela)
+                                    <option value="{{$tabela->id}}">{{$tabela->nome}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -113,6 +118,7 @@
 <!-- Custom scripts for all pages-->
 <script src="{{asset('dashboardTemplate/js/sb-admin-2.min.js')}}"></script>
 <script src="{{asset('dashboardTemplate/bootstrap/js/bootstrap-select.js')}}"></script>
+<script src="{{asset('dashboardTemplate/bootstrap/i18n/defaults-pt_BR.js')}}"></script>
 
 <!-- Page level plugins -->
 
