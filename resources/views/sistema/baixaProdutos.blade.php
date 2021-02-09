@@ -45,22 +45,49 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 <!-- Content Row -->
-                <div class="row col-12 card p-2">
+
+                <div class="card p-3 mb-4">
+
+                    <table class="table table-hover table-striped m-0">
+                        <thead class="bg bg-primary text-white">
+                        <tr>
+                            <th scope="col">SKU</th>
+                            <th scope="col">Nome produto</th>
+                            <th scope="col">Quantidade em estoque</th>
+                        </thead>
+                        <tbody>
+
+                        @foreach($produtos as $produto)
+                            <tr>
+                                <th scope="row">{{$produto->codigo_produto}}</th>
+                                <td>{{$produto->nome}}</td>
+                                <td>{{$produto->quantidade}}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+
                     <form action="{{route('baixar_produtos_escrever')}}" method="post">
                         @csrf
-                        <div class="col-3">
-                            <label>Quantidade</label>
-                            <input class="form-control" name="quantidade" type="text">
-                        </div>
-                        <div class="col-sm mt-2">
-                            <select class="selectpicker" name="produtos[]" multiple>
-                                @foreach($produtos as $tabela)
-                                    <option value="{{$tabela->id}}">{{$tabela->nome}}</option>
-                                @endforeach
-                            </select>
+                        <div class="row card p-2 m-auto">
+
+                            <div class="col-1">
+                                <label>Quantidade:</label>
+                                <input class="form-control" name="quantidade" placeholder="Quantidade" type="text">
+                            </div>
+                            <div class="col-sm mt-2">
+                                <select class="selectpicker" name="produtos[]" multiple>
+                                    @foreach($produtos as $tabela)
+                                        <option value="{{$tabela->id}}">{{$tabela->nome}}</option>
+                                    @endforeach
+                                </select>
+                                <button type="submit" class="col-1 btn btn-sm btn-success">Enviar</button>
+
+                            </div>
                         </div>
                     </form>
-                </div>
+
             </div>
             <!-- /.container-fluid -->
 
