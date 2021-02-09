@@ -37,7 +37,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{route('cadastrar_produto')}}">Adicionar</a>
                 <a class="collapse-item" href="{{route('listar_produtos')}}">Listar</a>
-                <a class="collapse-item" href="">Dar baixa</a>
+                <a class="collapse-item" href="{{route('baixar_produtos')}}">Dar baixa</a>
             </div>
         </div>
     </li>
