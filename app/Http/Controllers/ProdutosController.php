@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Produtos;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 
 class ProdutosController extends Controller
 {
+    public function __construct()
+    {
+        Paginator::useBootstrap();
+    }
+
     public function cadastrarProduto(){
         return view('sistema.Produto');
     }
