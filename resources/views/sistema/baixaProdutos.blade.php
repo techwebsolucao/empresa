@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{asset('dashboardTemplate/css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboardTemplate/bootstrap/css/bootstrap-select.css')}}" rel="stylesheet">
 
 </head>
 
@@ -107,7 +108,7 @@
 
 <!-- Custom scripts for all pages-->
 <script src="{{asset('dashboardTemplate/js/sb-admin-2.min.js')}}"></script>
-<script src="{{asset('dashboardTemplate/bootstrap/bootstrap-select.js')}}"></script>
+<script src="{{asset('dashboardTemplate/bootstrap/js/bootstrap-select.js')}}"></script>
 
 <!-- Page level plugins -->
 
