@@ -29,7 +29,7 @@ class ProdutosController extends Controller
                 'data' => date('Y-m-d')
             ]);
         }catch (\Exception $e){
-            return $e;
+            abort(500);
         }
         return redirect()->route('cadastrar_produto');
     }
@@ -59,6 +59,8 @@ class ProdutosController extends Controller
     }
 
     public function baixarProdutos(){
-        
+        $coletarDadosProdutos = DB::table('produtos')->get();
+
+        return view('sistema.baixaProdutos', ['produtos' => $coletarDadosProdutos]);
     }
 }
