@@ -60,7 +60,10 @@ class ProdutosController extends Controller
 
     public function baixarProdutos(){
         $coletarDadosProdutos = DB::table('produtos')->get();
-
         return view('sistema.baixaProdutos', ['produtos' => $coletarDadosProdutos]);
+    }
+
+    public function baixarProdutosEscrever(Request $request){
+        
     }
 }
