@@ -43,12 +43,14 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-
                 <!-- Content Row -->
-                <div class="row col-10">
-                    
+                <div class="row col-12 card p-2">
+                    <select class="selectpicker" name="produtos[]" multiple>
+                        @foreach($produtos as $tabela)
+                            
+                        @endforeach
+                    </select>
                 </div>
-
             </div>
             <!-- /.container-fluid -->
 
@@ -105,6 +107,7 @@
 
 <!-- Custom scripts for all pages-->
 <script src="{{asset('dashboardTemplate/js/sb-admin-2.min.js')}}"></script>
+<script src="{{asset('dashboardTemplate/bootstrap/bootstrap-select.js')}}"></script>
 
 <!-- Page level plugins -->
 
