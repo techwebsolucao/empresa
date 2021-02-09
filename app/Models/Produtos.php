@@ -10,15 +10,9 @@ class Produtos extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id_curso',
-        'id_modulo',
-        'nome_curso',
-        'email',
-        'status',
-        'data',
-        'valor',
-        'slug',
-        'foto'
+        'codigo_produto',
+        'nome',
+        'quantidade'
     ];
 
     protected $table = 'produtos';
