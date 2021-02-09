@@ -46,11 +46,15 @@
             <div class="container-fluid">
                 <!-- Content Row -->
                 <div class="row col-12 card p-2">
-                    <select class="selectpicker" name="produtos[]" multiple>
-                        @foreach($produtos as $tabela)
-                            <option value="{{$tabela->id}}">{{$tabela->nome}}</option>
-                        @endforeach
-                    </select>
+                    <form action="" method="post">
+                        <label>Quantidade</label>
+                        <input class="form-control" name="quantidade" type="text">
+                        <select class="selectpicker" name="produtos[]" multiple>
+                            @foreach($produtos as $tabela)
+                                <option value="{{$tabela->id}}">{{$tabela->nome}}</option>
+                            @endforeach
+                        </select>
+                    </form>
                 </div>
             </div>
             <!-- /.container-fluid -->
