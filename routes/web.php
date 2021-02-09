@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\Route;
 //Middleware verificação se está logado
 ##
 
+//Sair
+Route::get('/logout', [EntrarController::class, 'logout'])->name('logout');
+
 //Dashboard
 Route::get('/dashboard', [EntrarController::class, 'index'])->name('dashboard');
-Route::get('/logout', function (){
-    Auth::logout();
-})->name('dashboard');
 
 //Produtos
 Route::get('/cadastrar-produto', [ProdutosController::class, 'cadastrarProduto'])->name('cadastrar_produto'); #Ok
