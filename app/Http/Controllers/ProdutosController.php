@@ -24,7 +24,8 @@ class ProdutosController extends Controller
             Produtos::create([
                 'codigo_produto' => $dados['codigo_produto'],
                 'nome' => $dados['nome_produto'],
-                'quantidade' => $dados['quantidade']
+                'quantidade' => $dados['quantidade'],
+                'data' => date('Y-m-d')
             ]);
         }catch (\Exception $e){
             return $e;

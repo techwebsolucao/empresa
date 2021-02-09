@@ -18,7 +18,7 @@ class Produtos extends Migration
             $table->integer('codigo_produto')->unique();
             $table->string('nome');
             $table->integer('quantidade');
-            $table->timestamps();
+            $table->string('data', 50);
         });
     }
 

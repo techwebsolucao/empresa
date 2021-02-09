@@ -12,8 +12,10 @@ class Produtos extends Model
     protected $fillable = [
         'codigo_produto',
         'nome',
-        'quantidade'
+        'quantidade',
+        'data'
     ];
-
+    
+    public $timestamps = false;
     protected $table = 'produtos';
 }
