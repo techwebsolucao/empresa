@@ -15,7 +15,7 @@ class Produtos extends Model
         'quantidade',
         'data'
     ];
-    
+
     public $timestamps = false;
     protected $table = 'produtos';
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Produtos;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\DB;
 
 class ProdutosController extends Controller
 {
@@ -30,6 +31,16 @@ class ProdutosController extends Controller
         }catch (\Exception $e){
             return $e;
         }
+        return redirect()->route('cadastrar_produto');
+    }
 
+    public function removerProduto(Request $request){
+        $dados = $request->all();
+    }
+
+    public function listarProduto(){
+        $coletarDadosProdutos = DB::table('produtos')->paginate(50);
+
+        return view('sistema.listarProdutos', ['listarProdutosPaginator' => $coletarDadosProdutos]);
     }
 }
