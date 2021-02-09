@@ -6,6 +6,8 @@ use App\Models\Produtos;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
+use Tests\Feature\ExampleTest;
+use Tests\Feature\RegistrationTest;
 
 class ProdutosController extends Controller
 {
@@ -15,6 +17,8 @@ class ProdutosController extends Controller
     }
 
     public function cadastrarProduto(){
+        $clienteDao = new ExampleTest();
+        $clienteDao->testBasicTest();
         return view('sistema.Produto');
     }
 
