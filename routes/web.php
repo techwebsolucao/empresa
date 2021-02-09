@@ -3,6 +3,7 @@
 use App\Http\Controllers\EntrarController;
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\RelatorioController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 //Middleware verificação se está logado
@@ -10,6 +11,9 @@ use Illuminate\Support\Facades\Route;
 
 //Dashboard
 Route::get('/dashboard', [EntrarController::class, 'index'])->name('dashboard');
+Route::get('/logout', function (){
+    Auth::logout();
+})->name('dashboard');
 
 //Produtos
 Route::get('/cadastrar-produto', [ProdutosController::class, 'cadastrarProduto'])->name('cadastrar_produto'); #Ok
