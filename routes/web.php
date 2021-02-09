@@ -18,8 +18,8 @@ Route::get('/editar-produto/{id}', [ProdutosController::class, 'editarProduto'])
 Route::post('/editar-produto-atualizar', [ProdutosController::class, 'editarProdutoEscrever'])->name('editar_produto_escrever'); #Ok
 Route::get('/produtos', [ProdutosController::class, 'listarProduto'])->name('listar_produtos'); #Ok
 Route::post('/remover-produto/', [ProdutosController::class, 'removerProduto'])->name('remover_produto'); #Ok
-Route::get('/baixar-produtos', [ProdutosController::class, 'baixarProdutos'])->name('baixar_produtos');
-Route::post('/baixar-produtos', [ProdutosController::class, 'baixarProdutosEscrever'])->name('escrever_produtos');
+Route::get('/baixar-produtos', [ProdutosController::class, 'baixarProdutos'])->name('baixar_produtos'); #Ok
+Route::post('/baixar-produtos', [ProdutosController::class, 'baixarProdutosEscrever'])->name('baixar_produtos_escrever');
 
 //Relatorios
 Route::get('/relatorio/{id}', [RelatorioController::class, 'index'])->name('relatorio_id');
