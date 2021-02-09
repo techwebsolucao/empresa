@@ -47,7 +47,7 @@
                 <div class="row col-12 card p-2">
                     <select class="selectpicker" name="produtos[]" multiple>
                         @foreach($produtos as $tabela)
-                            
+                            <option value="{{$tabela->id}}">{{$tabela->nome}}</option>
                         @endforeach
                     </select>
                 </div>
