@@ -1,6 +1,6 @@
 <h1>Projeto Demonstração Laravel Estoque</h1>
 
-<h4>Versões </h4>
+Compatibilidade
 
 |Server | Versão | Suportado |
 | ------- | ------------------ | ------|
@@ -27,6 +27,6 @@ Esse url vai te ajudar a dar baixa nos produtos do estoque, lembrando que tem qu
 no <b>postman</b> ou terceiros vai precisar usar em json da seguinte forma <b>{ "quantidade": 10, "produtos": [id,id,id] } </b> 
 dessa forma ele vai ele vai tirar 10 de quantidade de cada produto colocado dentro da array.<br>
 
-<a href="#">http>//localhost/api/adicionar-produto</a> - utiliza o metodo POST
+<a href="#">http://localhost/api/adicionar-produto</a> - utiliza o metodo POST
 
 
