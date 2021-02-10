@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 //Sair
 Route::get('/logout', [EntrarController::class, 'logout'])->name('logout');
 
-Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
+Route::group(['middleware' => ['auth:sanctum']], function () {
 
     //Dashboard
     Route::get('/dashboard', [EntrarController::class, 'index'])->name('dashboard'); #ok
