@@ -4,8 +4,8 @@
     use Illuminate\Support\Facades\Auth;
 
     $nome = Auth::user()->name;
-    $coletarDadosQuantidade = DB::table('produtos')->where('quantidade', '<=', '100')->get();
-    $coletarDadosQuantidadeCount = DB::table('produtos')->where('quantidade', '<=', '100')->count();
+    $coletarDadosQuantidade = DB::table('produtos')->where('quantidade', '<', '100')->get();
+    $coletarDadosQuantidadeCount = DB::table('produtos')->where('quantidade', '<', '100')->count();
 @endphp
 
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
