@@ -34,7 +34,7 @@ O <b>codigo do produto</b> não pode ser igual ele é uma identificação de SKU
 <br><br>
 
 <h5>Como acessar o sistema</h5>
-Crie um banco com o nome desejado as configurações <b>InnoDB e uf8Unicode<b/>,
+Crie um banco com o nome desejado as configurações <b>InnoDB e uf8Unicode</b>,
 para acessar o sistema é preciso criar uma conta na url <a href="#">http://localhost/register </a>
 
 <br>
