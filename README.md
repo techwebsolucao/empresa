@@ -19,7 +19,7 @@ poder logar com o postman, para utilizar o post faça via json email e senha(pas
 no momento que ele fizer o login você vai receber um <b style="color: #fff">token</b> para poder utilizar api por completa.
 
 <h5>Como utilizar o token recebido pelo LOGIN</h5>
-Você vai receber um token via json, você copia ele e coloca no Authorization - Bearer.
+Você vai receber um token via json, você copia ele e coloca no <b>Authorization - Bearer</b>.
 
 <h5>Como usar API depois de receber o TOKEN</h5>
 <a href="#">http://localhost/api/baixar-produtos </a> - utliza o metodo POST <br>
