@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Relatorio;
 use App\Models\User;
+use Database\Factories\RelatorioFactory;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Tests\Feature\BuscarRelatorio;
 
 class EntrarController extends Controller
 {
@@ -41,6 +44,10 @@ class EntrarController extends Controller
             'countProdutosBaixas' => $produtosInformacaoCountBaixas,
             'countProdutosAdicionado' => $produtosInformacaoCountAdicionado,
         ]);
+    }
+
+    public function indexView(){
+        return redirect()->route('login');
     }
 
     public function logout(){
