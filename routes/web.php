@@ -14,10 +14,10 @@ Route::get('/logout', [EntrarController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
 
-//Dashboard
-    Route::get('/dashboard', [EntrarController::class, 'index'])->name('dashboard');
+    //Dashboard
+    Route::get('/dashboard', [EntrarController::class, 'index'])->name('dashboard'); #ok
 
-//Produtos
+    //Produtos
     Route::get('/cadastrar-produto', [ProdutosController::class, 'cadastrarProduto'])->name('cadastrar_produto'); #Ok
     Route::post('/cadastrar-produto', [ProdutosController::class, 'escreverProduto'])->name('escrever_produto'); #Ok
     Route::get('/editar-produto/{id}', [ProdutosController::class, 'editarProduto'])->name('editar_produto'); #Ok
@@ -27,8 +27,8 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('/baixar-produtos', [ProdutosController::class, 'baixarProdutos'])->name('baixar_produtos'); #Ok
     Route::post('/baixar-produtos', [ProdutosController::class, 'baixarProdutosEscrever'])->name('baixar_produtos_escrever'); #ok
 
-//Relatorios
-    Route::get('/relatorio/{id}', [RelatorioController::class, 'index'])->name('relatorio_id');
-    Route::get('/relatorios', [RelatorioController::class, 'listarRelatorios'])->name('relatorios');
+    //Relatorios
+    Route::get('/relatorio/{id}', [RelatorioController::class, 'index'])->name('relatorio_id'); #wait
+    Route::get('/relatorios', [RelatorioController::class, 'listarRelatorios'])->name('relatorios'); #wait
 
 });
