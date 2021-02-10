@@ -142,9 +142,17 @@ class ProdutosController extends Controller
                     ->where('id', '=', $tabela->id)
                     ->update(['quantidade' => $tabela->quantidade -= $dados['quantidade']]);
             }
-            return response()->json(['status' => 200, 'mensagem' => 'Produto criado com sucesso']);
+            Relatorios::create([
+                'nome' => Auth::user()->name,
+                'descricao' => 'Baixou do estoque os produtos via "API"',
+                'quantidade' => $dados['quantidade'],
+                'data' => date('Y-m-d'),
+                'id_produto' => json_encode($dados['produtos']),
+                'opcao' => 'remove'
+            ]);
+            return response()->json(['status' => 200, 'mensagem' => 'Produto abaixado com sucesso']);
         }catch (\Exception $exception){
-            return response()->json(['status' => 500, 'mensagem' => 'Algo não está correto no post']);
+            return response()->json(['status' => 500, 'mensagem' => $exception->getMessage()]);
         }
 
     }
