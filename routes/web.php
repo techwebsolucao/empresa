@@ -12,20 +12,23 @@ use Illuminate\Support\Facades\Route;
 //Sair
 Route::get('/logout', [EntrarController::class, 'logout'])->name('logout');
 
+Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
+
 //Dashboard
-Route::get('/dashboard', [EntrarController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [EntrarController::class, 'index'])->name('dashboard');
 
 //Produtos
-Route::get('/cadastrar-produto', [ProdutosController::class, 'cadastrarProduto'])->name('cadastrar_produto'); #Ok
-Route::post('/cadastrar-produto', [ProdutosController::class, 'escreverProduto'])->name('escrever_produto'); #Ok
-Route::get('/editar-produto/{id}', [ProdutosController::class, 'editarProduto'])->name('editar_produto'); #Ok
-Route::post('/editar-produto-atualizar', [ProdutosController::class, 'editarProdutoEscrever'])->name('editar_produto_escrever'); #Ok
-Route::get('/produtos', [ProdutosController::class, 'listarProduto'])->name('listar_produtos'); #Ok
-Route::post('/remover-produto/', [ProdutosController::class, 'removerProduto'])->name('remover_produto'); #Ok
-Route::get('/baixar-produtos', [ProdutosController::class, 'baixarProdutos'])->name('baixar_produtos'); #Ok
-Route::post('/baixar-produtos', [ProdutosController::class, 'baixarProdutosEscrever'])->name('baixar_produtos_escrever'); #ok
+    Route::get('/cadastrar-produto', [ProdutosController::class, 'cadastrarProduto'])->name('cadastrar_produto'); #Ok
+    Route::post('/cadastrar-produto', [ProdutosController::class, 'escreverProduto'])->name('escrever_produto'); #Ok
+    Route::get('/editar-produto/{id}', [ProdutosController::class, 'editarProduto'])->name('editar_produto'); #Ok
+    Route::post('/editar-produto-atualizar', [ProdutosController::class, 'editarProdutoEscrever'])->name('editar_produto_escrever'); #Ok
+    Route::get('/produtos', [ProdutosController::class, 'listarProduto'])->name('listar_produtos'); #Ok
+    Route::post('/remover-produto/', [ProdutosController::class, 'removerProduto'])->name('remover_produto'); #Ok
+    Route::get('/baixar-produtos', [ProdutosController::class, 'baixarProdutos'])->name('baixar_produtos'); #Ok
+    Route::post('/baixar-produtos', [ProdutosController::class, 'baixarProdutosEscrever'])->name('baixar_produtos_escrever'); #ok
 
 //Relatorios
-Route::get('/relatorio/{id}', [RelatorioController::class, 'index'])->name('relatorio_id');
-Route::get('/relatorios', [RelatorioController::class, 'listarRelatorios'])->name('relatorios');
+    Route::get('/relatorio/{id}', [RelatorioController::class, 'index'])->name('relatorio_id');
+    Route::get('/relatorios', [RelatorioController::class, 'listarRelatorios'])->name('relatorios');
 
+});
