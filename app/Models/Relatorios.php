@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Relatorios extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        
+    ];
+
+    public $timestamps = false;
+    protected $table = 'relatorios';
 }
