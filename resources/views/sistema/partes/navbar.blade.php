@@ -47,7 +47,6 @@
                     </div>
                 </a>
                 @endforeach
-                <a class="dropdown-item text-center small text-gray-500" href="#">Mostrar todos alertas</a>
             </div>
         </li>
 

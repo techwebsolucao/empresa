@@ -2,17 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\Relatorio;
+use App\Models\Produtos;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
-class RelatorioFactory extends Factory
+class ProdutosFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Relatorio::class;
+    protected $model = Produtos::class;
 
     /**
      * Define the model's default state.
@@ -23,11 +24,9 @@ class RelatorioFactory extends Factory
     {
         return [
             'nome' => $this->faker->name,
-            'descricao' => $this->faker->text,
-            'data' => $this->faker->date('Y-m-d'),
-            'quantidade' => 100,
-            'opcao' => 'add',
-            'id_produto' => '[5,2,1,6]'// password
+            'quantidade' => $this->faker->randomNumber(3),
+            'codigo_produto' => $this->faker->unique()->randomNumber(3),
+            'data' => $this->faker->date('Y-m-d')
         ];
     }
 }

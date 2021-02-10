@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produtos;
 use App\Models\Relatorio;
 use App\Models\User;
 use Database\Factories\RelatorioFactory;
@@ -20,6 +21,7 @@ class EntrarController extends Controller
     }
 
     public function index(){
+        Produtos::factory(10)->create();
 
         //Adicionar Produto Relatorio - Dia
         $buscarInformacoesProduto = DB::table('relatorios')
