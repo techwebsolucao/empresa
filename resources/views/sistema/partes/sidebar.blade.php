@@ -51,7 +51,6 @@
         <div id="collapseTree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="#">Buscar</a>
-                <a class="collapse-item" href="#">Listar</a>
             </div>
         </div>
     </li>
