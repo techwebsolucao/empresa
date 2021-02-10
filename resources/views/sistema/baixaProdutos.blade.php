@@ -48,6 +48,7 @@
 
                 <div class="card p-3 mb-4" style="max-height:400px; overflow-x: auto; ">
 
+
                     <table class="table table-hover table-sm table-striped m-0 " >
                         <thead class="bg bg-primary text-white">
                         <tr>
