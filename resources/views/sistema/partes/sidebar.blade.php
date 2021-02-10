@@ -50,7 +50,7 @@
         </a>
         <div id="collapseTree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="#">Buscar</a>
+                <a class="collapse-item" data-toggle="modal" data-target="#buscarProduto" href="#">Buscar</a>
             </div>
         </div>
     </li>
@@ -64,3 +64,35 @@
     </div>
 
 </ul>
+
+<div class="modal fade" id="buscarProduto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Procurar Baixas\Produtos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <form action="{{route('relatorio_search')}}" method="post">
+            <div class="modal-body">
+                    @csrf
+                <div class="row">
+                    <div class="col-sm">
+                        <select class="bootstrap-select form-select" name="opcao">
+                            <option value="add">Produtos Adicionados</option>
+                            <option value="remove">Produtos baixados</option>
+                        </select>
+                        <input type="date" name="data" class="mt-3 form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-primary">Pesquisar</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
