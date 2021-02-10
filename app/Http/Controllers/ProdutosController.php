@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produtos;
+use App\Models\Relatorios;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Tests\Feature\ExampleTest;
 use Tests\Feature\RegistrationTest;
@@ -26,11 +28,19 @@ class ProdutosController extends Controller
         $dados = $request->all();
 
         try{
-            Produtos::create([
+           $pegarDados = Produtos::create([
                 'codigo_produto' => $dados['codigo_produto'],
                 'nome' => $dados['nome_produto'],
                 'quantidade' => $dados['quantidade'],
                 'data' => date('Y-m-d')
+            ]);
+
+            Relatorios::create([
+                'nome' => Auth::user()->name,
+                'descricao' => 'Produto com o nome "'.$pegarDados->nome. '" foi adicionado via "'. 'Sistema"',
+                'quantidade' => $pegarDados->quantidade,
+                'data' => date('Y-m-d'),
+                'id_produto' => json_encode($pegarDados->id)
             ]);
         }catch (\Exception $e){
             abort(500);
@@ -90,11 +100,19 @@ class ProdutosController extends Controller
         $dados = $request->all();
 
         try{
-            Produtos::create([
+            $pegarDados = Produtos::create([
                 'codigo_produto' => $dados['codigo_produto'],
                 'nome' => $dados['nome'],
                 'quantidade' => $dados['quantidade'],
                 'data' => date('Y-m-d')
+            ]);
+
+            Relatorios::create([
+                'nome' => Auth::user()->name,
+                'descricao' => 'Produto com o nome "'.$pegarDados->nome. '" foi adicionado via "'. 'API"',
+                'quantidade' => $pegarDados->quantidade,
+                'data' => date('Y-m-d'),
+                'id_produto' => json_encode($pegarDados->id)
             ]);
             return response()->json(['status' => 200, 'mensagem' => 'Produto criado com sucesso']);
 
