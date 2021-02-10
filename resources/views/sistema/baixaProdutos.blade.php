@@ -79,7 +79,7 @@
                             <div class="col-sm mt-2">
                                 <select class="selectpicker" name="produtos[]" multiple>
                                     @foreach($produtos as $tabela)
-                                        <option value="{{$tabela->id}}">{{$tabela->nome}}</option>
+                                        <option value="{{$tabela->id}}">{{$tabela->nome}} - {{$tabela->codigo_produto}}</option>
                                     @endforeach
                                 </select>
                                 <button type="submit" class="col-1 btn btn-sm btn-success">Enviar</button>
