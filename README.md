@@ -21,4 +21,9 @@ no momento que ele fizer o login você vai receber um <b style="color: #fff">tok
 <h5>Como utilizar o token recebido pelo LOGIN</h5>
 Você vai receber um token via json, você copia ele e coloca no Authorization - Bearer.
 
+<h5>Como usar API depois de receber o TOKEN</h5>
+http://localhost/api/baixar-produtos - utliza o metodo POST <br>
+Esse url vai te ajudar a dar baixa nos produtos do estoque, lembrando que tem que estar com o token gerado.<br>
+Exemplo
+
 
