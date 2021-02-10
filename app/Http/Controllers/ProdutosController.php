@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produtos;
-use App\Models\Relatorios;
+use App\Models\Relatorio;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
@@ -35,7 +35,7 @@ class ProdutosController extends Controller
                 'data' => date('Y-m-d')
             ]);
 
-            Relatorios::create([
+            Relatorio::create([
                 'nome' => Auth::user()->name,
                 'descricao' => 'Produto com o nome "'.$pegarDados->nome. '" foi adicionado via "'. 'Sistema"',
                 'quantidade' => $pegarDados->quantidade,
@@ -91,7 +91,7 @@ class ProdutosController extends Controller
                     ->where('id', '=', $tabela->id)
                     ->update(['quantidade' => $tabela->quantidade -= $dados['quantidade']]);
             }
-            Relatorios::create([
+            Relatorio::create([
                 'nome' => Auth::user()->name,
                 'descricao' => 'Baixou do estoque os produtos via "Sistema"',
                 'quantidade' => $dados['quantidade'],
@@ -118,7 +118,7 @@ class ProdutosController extends Controller
                 'data' => date('Y-m-d')
             ]);
 
-            Relatorios::create([
+            Relatorio::create([
                 'nome' => Auth::user()->name,
                 'descricao' => 'Produto com o nome "'.$pegarDados->nome. '" foi adicionado via "'. 'API"',
                 'quantidade' => $pegarDados->quantidade,
@@ -142,7 +142,7 @@ class ProdutosController extends Controller
                     ->where('id', '=', $tabela->id)
                     ->update(['quantidade' => $tabela->quantidade -= $dados['quantidade']]);
             }
-            Relatorios::create([
+            Relatorio::create([
                 'nome' => Auth::user()->name,
                 'descricao' => 'Baixou do estoque os produtos via "API"',
                 'quantidade' => $dados['quantidade'],
