@@ -14,7 +14,8 @@ class Relatorios extends Model
         'descricao',
         'quantidade',
         'id_produto',
-        'data'
+        'data',
+        'opcao'
     ];
 
     public $timestamps = false;
