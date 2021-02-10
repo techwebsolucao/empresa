@@ -58,7 +58,7 @@ class ProdutosController extends Controller
     }
 
     public function listarProduto(){
-        $coletarDadosProdutos = DB::table('produtos')->paginate(50);
+        $coletarDadosProdutos = DB::table('produtos')->paginate(15);
         return view('sistema.listarProdutos', ['listarProdutosPaginator' => $coletarDadosProdutos]);
     }
 
