@@ -46,11 +46,14 @@
             <div class="container-fluid">
 
                 <!-- Content Row -->
+                {{ $listarProdutosPaginator->links() }}
                 <div class="row col-12 card p-2" style="max-height:600px; overflow-x: auto; ">
+
+
                     <table class="table table-hover table-sm table-striped m-0">
                         <thead class="bg bg-primary text-white">
                         <tr>
-                            <th scope="col">SKU</th>
+                            <th scope="col">Codigo do produto</th>
                             <th scope="col">Nome produto</th>
                             <th scope="col">Quantidade em estoque</th>
                             <th scope="col">Ferramentas</th>
