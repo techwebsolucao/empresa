@@ -10,7 +10,11 @@ class Relatorios extends Model
     use HasFactory;
 
     protected $fillable = [
-
+        'nome',
+        'descricao',
+        'quantidade',
+        'id_produto',
+        'data'
     ];
 
     public $timestamps = false;
