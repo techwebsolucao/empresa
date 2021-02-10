@@ -24,7 +24,7 @@ Você vai receber um token via json, você copia ele e coloca no Authorization -
 <h5>Como usar API depois de receber o TOKEN</h5>
 http://localhost/api/baixar-produtos - utliza o metodo POST <br>
 Esse url vai te ajudar a dar baixa nos produtos do estoque, lembrando que tem que estar com o token gerado.<br>
-no postman ou terceiros vai precisar usar em json da seguinte forma { "quantidade": 10, "produtos": [id,id,id] } 
-dessa forma ele vai ele vai tirar tirar 10 de quantidade de cada produto colocado dentro da array
+no <b>postman</b> ou terceiros vai precisar usar em json da seguinte forma <b>{ "quantidade": 10, "produtos": [id,id,id] } </b> 
+dessa forma ele vai ele vai tirar 10 de quantidade de cada produto colocado dentro da array.
 
 
