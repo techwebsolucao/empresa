@@ -1,7 +1,7 @@
 <h1>Projeto Demonstração Laravel Estoque</h1>
 
 
-#<h1>Sistema</h1>
+<h1>Sistema</h1>
 Controle de estoque com relatorios diario e especifico.<br>
 Controle de baixa dos produtos do estoque.<br>
 Validação se o item chegou a 0.<br>
