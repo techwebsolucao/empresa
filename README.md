@@ -41,6 +41,11 @@ O <b>codigo do produto</b> não pode ser igual, pois ele é uma identificação 
 <hr>
 
 <h4>Acessando o sistema</h4>
+Mais importante para rodar o projeto é rodar os seguintes comandos<br>
+<b>(1) - composer install</b><br>
+<b>(2) - npm install && npm run dev</b><br>
+<b>(3) - antes de rodar esse comando precisa ser renomeado o .env.example para .env php artisan key:generate</b>
+
 Crie um banco com o nome desejado as configurações <b>InnoDB e uf8Unicode</b>,
 para acessar o sistema é preciso criar uma conta na url <a href="#">http://localhost/register </a>
 
