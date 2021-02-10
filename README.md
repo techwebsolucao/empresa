@@ -9,6 +9,8 @@ Compatibilidade
 | MYSQL  | 5.7.24 |:white_check_mark: |
 
 
+
+<hr>
 Esse sistema utiliza API para uso externos.
 Esse <a href="http://www.mediafire.com/file/r28f13eywhir3hl/banco.sql/file">link</a> aqui vai ser para baixar o banco de dados caso não queria utilizar o migration do laravel.
 
@@ -36,7 +38,9 @@ O <b>codigo do produto</b> não pode ser igual, pois ele é uma identificação 
 Crie um banco com o nome desejado as configurações <b>InnoDB e uf8Unicode</b>,
 para acessar o sistema é preciso criar uma conta na url <a href="#">http://localhost/register </a>
 
-<br>
+<h5>Seeders</h5>
+Quando estiver rodando a aplicação laravel, vai ter que rodar o comando <b>php artisan db:seed</b>
+
 Autor do conteudo: Eduardo Parcianello de Avila
 
 
