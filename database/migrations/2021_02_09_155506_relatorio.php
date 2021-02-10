@@ -20,6 +20,7 @@ class Relatorio extends Migration
             $table->integer('quantidade');
             $table->json('id_produto');
             $table->string('data', 50);
+            $table->string('opcao', 10);
         });
     }
 
