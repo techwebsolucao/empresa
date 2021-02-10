@@ -25,7 +25,7 @@ class ProdutosFactory extends Factory
         return [
             'nome' => $this->faker->name,
             'quantidade' => $this->faker->randomNumber(3),
-            'codigo_produto' => $this->faker->unique()->randomNumber(3),
+            'codigo_produto' => $this->faker->unique()->randomNumber(5),
             'data' => $this->faker->date('Y-m-d')
         ];
     }
