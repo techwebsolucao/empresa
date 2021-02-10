@@ -22,7 +22,7 @@ no momento que ele fizer o login você vai receber um <b style="color: #fff">tok
 Você vai receber um token via json, você copia ele e coloca no <b>Authorization - Bearer</b>.
 
 <h5>Como usar API depois de receber o TOKEN</h5>
-<a href="#">http://localhost/api/baixar-produtos </a> - utliza o metodo POST <br>
+<a href="#">http://localhost/api/baixar-produtos </a> - utliza o metodo POST. <br>
 Essa url vai te ajudar a dar baixa nos produtos do estoque, lembrando que tem que estar com o token gerado.<br>
 no <b>postman</b> ou terceiros vai precisar usar em json da seguinte forma <b>{ "quantidade": 10, "produtos": [id,id,id] } </b> 
 dessa forma ele vai ele vai tirar 10 de quantidade de cada produto colocado dentro da array.<br>
