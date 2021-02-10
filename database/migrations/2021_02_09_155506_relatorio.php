@@ -19,7 +19,7 @@ class Relatorio extends Migration
             $table->text('motivo');
             $table->integer('quantidade');
             $table->json('id_produto');
-            $table->timestamps();
+            $table->string('data', 50);
         });
     }
 
