@@ -8,14 +8,10 @@
 | Laravel   | 8.x |:white_check_mark: |
 | Mysql  | 5.7.24 |:white_check_mark: |
 
-<a href="#documentacao"><h5>Documentação</h5></a>
-
-<div id="documentacao"></div>
 
 Esse sistema utiliza API para usos externos pode usar com o postman para testes esse
 <a href="#">link</a> aqui vai ser para baixar o banco de dados caso não queria utilizar o migration do laravel.
 
-<br>
 <h5>Como usar a API</h5>
 http://localhost/api/baixar-produtos
 <br>Exemplo:
