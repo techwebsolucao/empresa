@@ -2,7 +2,7 @@
 
 <h4>Versões </h4>
 
-|Server | Version | Supported |
+|Server | Versão | Suportado |
 | ------- | ------------------ | ------|
 | PHP   | 7.3.21 | :white_check_mark: |
 | Laravel   | 8.x |:white_check_mark: |
