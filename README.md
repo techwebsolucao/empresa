@@ -1,7 +1,5 @@
 <h1>Projeto Demonstração Laravel Estoque</h1>
 
-<hr>
-
 <h4>Versões </h4>
 
 |Server | Version | Supported |
@@ -10,7 +8,6 @@
 | Laravel   | 8.x |:white_check_mark: |
 | Mysql  | 5.7.24 |:white_check_mark: |
 
+<h5 id="documentacao">Documentação basica</h5>
 
-
-<hr>
-<h5>Documentação basica</h5>
+<div id="documentacao"></div>
