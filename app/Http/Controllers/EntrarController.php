@@ -4,14 +4,36 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class EntrarController extends Controller
 {
+    public function __construct()
+    {
+        Paginator::useBootstrap();
+    }
+
     public function index(){
-        return view('dashboard');
+
+        //Adicionar Produto Relatorio
+        $buscarInformacoesProduto = DB::table('relatorios')
+            ->where('opcao', '=', 'add')
+            ->where('data', '=', date('Y-m-d'))
+            ->paginate(25);
+
+        //Baixar estoque Relatorio
+        $buscarInformacoesBaixas = DB::table('relatorios')
+            ->where('opcao', '=', 'remove')
+            ->where('data', '=' , date('Y-m-d'))
+            ->paginate(25);
+
+        return view('dashboard', [
+            'relatorioProdutoDia' => $buscarInformacoesProduto,
+            'relatorioBaixasDia' => $buscarInformacoesBaixas
+        ]);
     }
 
     public function logout(){
