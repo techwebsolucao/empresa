@@ -12,14 +12,13 @@ Compatibilidade
 Esse sistema utiliza API para usos externos pode usar com o postman para testes esse
 <a href="#">link</a> aqui vai ser para baixar o banco de dados caso não queria utilizar o migration do laravel.
 
-<h5>Como usar a API</h5>
-<a href="#">http://localhost/api/login </a> - utiliza o metodo POST<br>
-no postman você precisa ter uma conta criada dentro do sistema primeiro para
-poder logar com o postman, para utilizar o post faça via json email e senha(password).
-no momento que ele fizer o login você vai receber um <b style="color: #fff">token</b> para poder utilizar api por completa.
+<h5>Utilização da API</h5>
+<a href="#">http://localhost/api/login </a> - Metodo POST<br>
+Para efetuar o login, precisa ter uma conta cadastrada no sistema,
+efetuando o login vai receber um TOKEN via JSON para poder utilizar API por completo.
 
 <h5>Como utilizar o token recebido pelo LOGIN</h5>
-Você vai receber um token via json, você copia ele e coloca no <b>Authorization - Bearer</b>.
+Para consumir o token vai precisar colocar no <b>POSTMAN</b> <b>Authorization - Bearer</b>.
 
 <h5>Como usar API depois de receber o TOKEN</h5>
 <a href="#">http://localhost/api/baixar-produtos </a> - utliza o metodo POST. <br>
@@ -33,7 +32,7 @@ Essa url vai te ajudar a cadastrar um produto vou dar um exemplo em json
 O <b>codigo do produto</b> não pode ser igual ele é uma identificação de SKU para cada produto.
 <br>
 
-<h4>Como acessar o sistema</h4>
+<h4>Acessando o sistema</h4>
 Crie um banco com o nome desejado as configurações <b>InnoDB e uf8Unicode</b>,
 para acessar o sistema é preciso criar uma conta na url <a href="#">http://localhost/register </a>
 
