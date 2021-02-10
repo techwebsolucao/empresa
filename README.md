@@ -14,11 +14,11 @@ Esse sistema utiliza API para usos externos pode usar com o postman para testes 
 
 <h5>Utilização da API</h5>
 <a href="#">http://localhost/api/login </a> - Metodo POST<br>
-Para efetuar o login, precisa ter uma conta cadastrada no sistema,
+Para efetuar o login precisa ter uma conta cadastrada no sistema,
 efetuando o login vai receber um TOKEN via JSON para poder utilizar API por completo.
 
 <h5>Como utilizar o token recebido pelo LOGIN</h5>
-Para consumir o token vai precisar colocar no <b>POSTMAN</b> <b>Authorization - Bearer</b>.
+Para consumir o token vai precisar colocar no <b>Authorization - Bearer</b> que fica dentro do programa postman.
 
 <h5>Como usar API depois de receber o TOKEN</h5>
 <a href="#">http://localhost/api/baixar-produtos </a> - utliza o metodo POST. <br>
