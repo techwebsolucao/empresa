@@ -1,5 +1,13 @@
 <h1>Projeto Demonstração Laravel Estoque</h1>
 
+
+#Sistema
+Controle de estoque com relatorios diario e especifico.<br>
+Controle de baixa dos produtos do estoque.<br>
+Validação se o item chegou a 0.<br>
+Alertas de estoque itens abaixo de 100<br>
+<hr>
+
 Compatibilidade
 
 |Server | Versão | Suportado |
@@ -39,7 +47,7 @@ O <b>codigo do produto</b> não pode ser igual, pois ele é uma identificação 
 Crie um banco com o nome desejado as configurações <b>InnoDB e uf8Unicode</b>,
 para acessar o sistema é preciso criar uma conta na url <a href="#">http://localhost/register </a>
 
-<h5>Seeders</h5>
+<h4>Seeders</h4>
 Quando estiver rodando a aplicação laravel, vai ter que rodar o comando <b>php artisan db:seed</b>
 
 Autor do conteudo: Eduardo Parcianello de Avila
