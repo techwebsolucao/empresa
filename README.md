@@ -8,11 +8,6 @@ Compatibilidade
 | Laravel   | 8.x |:white_check_mark: |
 | MYSQL  | 5.7.24 |:white_check_mark: |
 
-|Server | Versão | Suportado |
-| ------- | ------------------ | ------|
-| PHP   | 7.3.21 | :white_check_mark: |
-| Laravel   | 7.x | ❌ |
-| MYSQL  | 5.7.24 |:white_check_mark: |
 
 Esse sistema utiliza API para usos externos pode usar com o postman para testes esse
 <a href="#">link</a> aqui vai ser para baixar o banco de dados caso não queria utilizar o migration do laravel.
