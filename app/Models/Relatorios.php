@@ -10,7 +10,7 @@ class Relatorios extends Model
     use HasFactory;
 
     protected $fillable = [
-        
+
     ];
 
     public $timestamps = false;
