@@ -11,10 +11,11 @@ use Illuminate\Support\Facades\Route;
 
 //Sair
 Route::get('/logout', [EntrarController::class, 'logout'])->name('logout');
+Route::get('/', [EntrarController::class, 'indexView'])->name('index_view');
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
 
-    //Dashboard
+    //Dashboard/Relatorios
     Route::get('/dashboard', [EntrarController::class, 'index'])->name('dashboard'); #ok
 
     //Produtos
