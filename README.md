@@ -6,12 +6,19 @@
 | ------- | ------------------ | ------|
 | PHP   | 7.3.21 | :white_check_mark: |
 | Laravel   | 8.x |:white_check_mark: |
-| Mysql  | 5.7.24 |:white_check_mark: |
+| MYSQL  | 5.7.24 |:white_check_mark: |
 
 
 Esse sistema utiliza API para usos externos pode usar com o postman para testes esse
 <a href="#">link</a> aqui vai ser para baixar o banco de dados caso não queria utilizar o migration do laravel.
 
 <h5>Como usar a API</h5>
-http://localhost/api/baixar-produtos
-<br>Exemplo:
+http://localhost/api/login - utiliza o metodo POST<br>
+no postman você precisa ter uma conta criada dentro do sistema primeiro para
+poder logar com o postman, para utilizar o post faça via json email e senha(password).
+no momento que ele fizer o login você vai receber um <b style="color: #fff">token</b> para poder utilizar api por completa.
+
+<h5>Como utilizar o token recebido pelo LOGIN</h5>
+Você vai receber um token via json, você copia ele e coloca no Authorization - Bearer.
+
+
