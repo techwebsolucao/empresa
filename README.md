@@ -9,7 +9,7 @@ Compatibilidade
 | MYSQL  | 5.7.24 |:white_check_mark: |
 
 
-Esse sistema utiliza API para usos externos pode usar com o postman para testes esse
+Esse sistema utiliza API para uso externos.
 <a href="#">link</a> aqui vai ser para baixar o banco de dados caso não queria utilizar o migration do laravel.
 
 <h5>Utilização da API</h5>
