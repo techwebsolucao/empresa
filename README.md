@@ -27,7 +27,7 @@ Essa url vai te ajudar a dar baixa nos produtos do estoque, lembrando que tem qu
 no <b>postman</b> ou terceiros vai precisar usar em json da seguinte forma <b>{ "quantidade": 10, "produtos": [id,id,id] } </b> 
 dessa forma ele vai ele vai tirar 10 de quantidade de cada produto colocado dentro da array.<br>
 <br>
-<a href="#">http://localhost/api/adicionar-produto</a> - utiliza o metodo POST<br>
+<a href="#">http://localhost/api/adicionar-produto</a> - utiliza o metodo POST.<br>
 Essa url vai te ajudar a cadastrar um produto vou dar um exemplo em json 
 <b> {"nome": "nome do produto", "quantidade": 10, "codigo_produto": 5}</b><br>
 O <b>codigo do produto</b> não pode ser igual ele é uma identificação de SKU para cada produto.
