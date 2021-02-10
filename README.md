@@ -31,5 +31,7 @@ dessa forma ele vai ele vai tirar 10 de quantidade de cada produto colocado dent
 Essa url vai te ajudar a cadastrar um produto vou dar um exemplo em json 
 <b> {"nome": "nome do produto", "quantidade": 10, "codigo_produto": 5}</b><br>
 O <b>codigo do produto</b> não pode ser igual ele é uma identificação de SKU para cada produto.
+<br><br>
+Autor do conteudo: Eduardo Parcianello de Avila
 
 
