@@ -1,7 +1,7 @@
 @php
     use Illuminate\Support\Facades\DB;
-    $coletarDadosQuantidade = DB::table('produtos')->where('quantidade', '<=', '100')->get();
-    $coletarDadosQuantidadeCount = DB::table('produtos')->where('quantidade', '<=', '100')->count();
+    $coletarDadosQuantidade = DB::table('produtos')->where('quantidade', '<', '100')->get();
+    $coletarDadosQuantidadeCount = DB::table('produtos')->where('quantidade', '<', '100')->count();
 @endphp
 
 <!DOCTYPE html>
@@ -76,6 +76,57 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <h5 class="ml-2 text-dark">Baixas do dia - @php echo date('Y-m-d') @endphp</h5>
+                    <div class="col-12">
+                        <table class="table table-hover table-sm table-striped m-0 mb-4">
+                            <thead class="bg bg-primary text-white">
+                            <tr>
+                                <th scope="col">Autor</th>
+                                <th scope="col">Descrição</th>
+                                <th scope="col">Quantidade</th>
+                                <th scope="col">Produtos</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($relatorioBaixasDia as $tabela)
+                            <tr>
+                                <th>{{$tabela->nome}}</th>
+                                <td>{{$tabela->descricao}}</td>
+                                <td>{{$tabela->quantidade}}</td>
+                                <td>{{$tabela->id_produto}}</td>
+                            </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h5 class="ml-2 text-dark">Produtos do dia - @php echo date('Y-m-d') @endphp</h5>
+                    <div class="col-12">
+                        <table class="table table-hover table-sm table-striped m-0">
+                            <thead class="bg bg-primary text-white">
+                            <tr>
+                                <th scope="col">Autor</th>
+                                <th scope="col">Descrição</th>
+                                <th scope="col">Quantidade</th>
+                                <th scope="col">Produto</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($relatorioProdutoDia as $tabela)
+                            <tr>
+                                <th>{{$tabela->nome}}</th>
+                                <td>{{$tabela->descricao}}</td>
+                                <td>{{$tabela->quantidade}}</td>
+                                <td>{{$tabela->id_produto}}</td>
+                            </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
