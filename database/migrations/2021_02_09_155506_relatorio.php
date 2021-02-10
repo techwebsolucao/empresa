@@ -16,7 +16,7 @@ class Relatorio extends Migration
         Schema::create('relatorios', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->text('motivo');
+            $table->text('descricao');
             $table->integer('quantidade');
             $table->json('id_produto');
             $table->string('data', 50);
