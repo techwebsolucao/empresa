@@ -86,9 +86,6 @@
                                             Baixas Total</div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
                                     </div>
-                                    <div class="col-auto">
-                                        <i class="fas fa-cart-plus fa-2x text-gray-300"></i>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -100,10 +97,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                             Baixas Total</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <i class="fas fa-cart-plus fa-2x text-gray-300"></i>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$countProdutosBaixas}}</div>
                                     </div>
                                 </div>
                             </div>
@@ -115,8 +109,8 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                            Baixas Total</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                                            Produtos Total</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$countProdutosAdicionado}}</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa fa-2x text-gray-300"></i>
@@ -132,6 +126,7 @@
                 </style>
                 <div class="row card p-3">
                     <h5 class="ml-2 text-dark">Baixas do dia - @php echo date('Y-m-d') @endphp</h5>
+                    {{ $relatorioBaixasDia->links() }}
                     <div class="col-12" style="max-height:400px; overflow-x: auto; ">
                         <table class="table table-hover table-sm table-striped m-0 mb-4">
                             <thead class="bg bg-primary text-white">
@@ -165,6 +160,7 @@
                     </div>
 
                     <h5 class="ml-2 text-dark">Produtos do dia - @php echo date('Y-m-d') @endphp</h5>
+                    {{ $relatorioProdutoDia->links() }}
                     <div class="col-12" style="max-height:400px; overflow-x: auto; ">
                         <table class="table table-hover table-sm table-striped m-0">
                             <thead class="bg bg-primary text-white">
