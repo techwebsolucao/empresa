@@ -40,7 +40,8 @@ class ProdutosController extends Controller
                 'descricao' => 'Produto com o nome "'.$pegarDados->nome. '" foi adicionado via "'. 'Sistema"',
                 'quantidade' => $pegarDados->quantidade,
                 'data' => date('Y-m-d'),
-                'id_produto' => json_encode($pegarDados->id)
+                'id_produto' => json_encode($pegarDados->id),
+                'opcao' => 'add'
             ]);
         }catch (\Exception $e){
             abort(500);
@@ -88,6 +89,14 @@ class ProdutosController extends Controller
                     ->where('id', '=', $tabela->id)
                     ->update(['quantidade' => $tabela->quantidade -= $dados['quantidade']]);
             }
+            Relatorios::create([
+                'nome' => Auth::user()->name,
+                'descricao' => 'Baixou do estoque os produtos via "Sistema"',
+                'quantidade' => $dados['quantidade'],
+                'data' => date('Y-m-d'),
+                'id_produto' => json_encode($dados['produtos']),
+                'opcao' => 'remove'
+            ]);
             return redirect()->route('baixar_produtos');
         }catch (\Exception $exception){
             return redirect()->route('baixar_produtos');
@@ -112,7 +121,8 @@ class ProdutosController extends Controller
                 'descricao' => 'Produto com o nome "'.$pegarDados->nome. '" foi adicionado via "'. 'API"',
                 'quantidade' => $pegarDados->quantidade,
                 'data' => date('Y-m-d'),
-                'id_produto' => json_encode($pegarDados->id)
+                'id_produto' => json_encode($pegarDados->id),
+                'opcao' => 'add'
             ]);
             return response()->json(['status' => 200, 'mensagem' => 'Produto criado com sucesso']);
 
