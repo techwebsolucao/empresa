@@ -4,7 +4,7 @@
     use Illuminate\Support\Facades\Auth;
 
     $nome = Auth::user()->name;
-    $coletarDadosQuantidade = DB::table('produtos')->where('quantidade', '<', '100')->get();
+    $coletarDadosQuantidade = DB::table('produtos')->where('quantidade', '<', '100')->paginate(6);
     $coletarDadosQuantidadeCount = DB::table('produtos')->where('quantidade', '<', '100')->count();
 @endphp
 

@@ -18,21 +18,24 @@ class EntrarController extends Controller
 
     public function index(){
 
-        //Adicionar Produto Relatorio
+        //Adicionar Produto Relatorio - Dia
         $buscarInformacoesProduto = DB::table('relatorios')
             ->where('opcao', '=', 'add')
             ->where('data', '=', date('Y-m-d'))
-            ->paginate(25);
+            ->get();
 
-        //Baixar estoque Relatorio
+        //Baixar estoque Relatorio - Dia
         $buscarInformacoesBaixas = DB::table('relatorios')
             ->where('opcao', '=', 'remove')
             ->where('data', '=' , date('Y-m-d'))
-            ->paginate(25);
+            ->get();
+
+        $produtosInformacao = DB::table('produtos')->get();
 
         return view('dashboard', [
             'relatorioProdutoDia' => $buscarInformacoesProduto,
-            'relatorioBaixasDia' => $buscarInformacoesBaixas
+            'relatorioBaixasDia' => $buscarInformacoesBaixas,
+            'produtosInformacao' => $produtosInformacao
         ]);
     }
 

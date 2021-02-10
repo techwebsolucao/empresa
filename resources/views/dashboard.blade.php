@@ -1,6 +1,6 @@
 @php
     use Illuminate\Support\Facades\DB;
-    $coletarDadosQuantidade = DB::table('produtos')->where('quantidade', '<', '100')->get();
+    $coletarDadosQuantidade = DB::table('produtos')->where('quantidade', '<', '100')->paginate(6);
     $coletarDadosQuantidadeCount = DB::table('produtos')->where('quantidade', '<', '100')->count();
 @endphp
 
@@ -79,10 +79,12 @@
                     </div>
 
                 </div>
+                <style>
 
-                <div class="row">
+                </style>
+                <div class="row card p-3">
                     <h5 class="ml-2 text-dark">Baixas do dia - @php echo date('Y-m-d') @endphp</h5>
-                    <div class="col-12">
+                    <div class="col-12" style="max-height:400px; overflow-x: auto; ">
                         <table class="table table-hover table-sm table-striped m-0 mb-4">
                             <thead class="bg bg-primary text-white">
                             <tr>
@@ -98,7 +100,16 @@
                                 <th>{{$tabela->nome}}</th>
                                 <td>{{$tabela->descricao}}</td>
                                 <td>{{$tabela->quantidade}}</td>
-                                <td>{{$tabela->id_produto}}</td>
+                                <td>@php
+                                    $pegarDadosConvertido = json_decode($tabela->id_produto);
+                                    foreach($pegarDadosConvertido as $tabela2){
+                                        foreach($produtosInformacao as $tabela3){
+                                            if($tabela2 == $tabela3->id){
+                                                echo '<a href='.route('editar_produto', ['id' => $tabela3->id]).'>'.$tabela3->nome . '(-'.$tabela->quantidade.') </a>';
+                                            }
+                                        }
+                                    }
+                                @endphp</td>
                             </tr>
                             @endforeach
                             </tbody>
@@ -106,7 +117,7 @@
                     </div>
 
                     <h5 class="ml-2 text-dark">Produtos do dia - @php echo date('Y-m-d') @endphp</h5>
-                    <div class="col-12">
+                    <div class="col-12" style="max-height:400px; overflow-x: auto; ">
                         <table class="table table-hover table-sm table-striped m-0">
                             <thead class="bg bg-primary text-white">
                             <tr>
@@ -122,7 +133,11 @@
                                 <th>{{$tabela->nome}}</th>
                                 <td>{{$tabela->descricao}}</td>
                                 <td>{{$tabela->quantidade}}</td>
-                                <td>{{$tabela->id_produto}}</td>
+                               @foreach($produtosInformacao as $tabela2)
+                                   @if($tabela2->id == $tabela->id_produto)
+                                        <td><a href="{{route('editar_produto', ['id' => $tabela->id_produto])}}">{{$tabela2->nome}}</a></td>
+                                    @endif
+                                @endforeach
                             </tr>
                             @endforeach
                             </tbody>

@@ -46,9 +46,9 @@
             <div class="container-fluid">
                 <!-- Content Row -->
 
-                <div class="card p-3 mb-4">
+                <div class="card p-3 mb-4" style="max-height:400px; overflow-x: auto; ">
 
-                    <table class="table table-hover table-striped m-0">
+                    <table class="table table-hover table-sm table-striped m-0 " >
                         <thead class="bg bg-primary text-white">
                         <tr>
                             <th scope="col">SKU</th>
@@ -77,9 +77,9 @@
                                 <input class="form-control" name="quantidade" placeholder="Quantidade" type="text">
                             </div>
                             <div class="col-sm mt-2">
-                                <select class="selectpicker" name="produtos[]" multiple>
+                                <select class="selectpicker" data-size="5" name="produtos[]" multiple>
                                     @foreach($produtos as $tabela)
-                                        <option value="{{$tabela->id}}">{{$tabela->nome}} - {{$tabela->codigo_produto}}</option>
+                                        <option value="{{$tabela->id}}">{{$tabela->nome}} - Codigo:{{$tabela->codigo_produto}}  Quantidade:{{$tabela->quantidade}}</option>
                                     @endforeach
                                 </select>
                                 <button type="submit" class="col-1 btn btn-sm btn-success">Enviar</button>

@@ -46,8 +46,8 @@
             <div class="container-fluid">
 
                 <!-- Content Row -->
-                <div class="row col-12 card p-2">
-                    <table class="table table-hover table-striped m-0">
+                <div class="row col-12 card p-2" style="max-height:400px; overflow-x: auto; ">
+                    <table class="table table-hover table-sm table-striped m-0">
                         <thead class="bg bg-primary text-white">
                         <tr>
                             <th scope="col">SKU</th>

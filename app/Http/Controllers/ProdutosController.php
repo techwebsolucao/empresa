@@ -44,7 +44,8 @@ class ProdutosController extends Controller
                 'opcao' => 'add'
             ]);
         }catch (\Exception $e){
-            abort(500);
+            return redirect()->route('cadastrar_produto');
+
         }
         return redirect()->route('cadastrar_produto');
     }
@@ -52,6 +53,7 @@ class ProdutosController extends Controller
 
     public function removerProduto(Request $request){
         $dados = $request->all();
+
         Produtos::destroy($dados['id']);
     }
 
