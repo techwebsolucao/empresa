@@ -1,3 +1,9 @@
+@php
+    use Illuminate\Support\Facades\DB;
+    $coletarDadosQuantidade = DB::table('produtos')->where('quantidade', '<=', '100')->get();
+    $coletarDadosQuantidadeCount = DB::table('produtos')->where('quantidade', '<=', '100')->count();
+@endphp
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -61,11 +67,11 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                            Pending Requests</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            Estoque abaixo de 100</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$coletarDadosQuantidadeCount}}</div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        <i class="fas fa-cart-plus fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
