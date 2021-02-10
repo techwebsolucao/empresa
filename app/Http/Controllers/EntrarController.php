@@ -22,20 +22,24 @@ class EntrarController extends Controller
         $buscarInformacoesProduto = DB::table('relatorios')
             ->where('opcao', '=', 'add')
             ->where('data', '=', date('Y-m-d'))
-            ->get();
+            ->paginate(15);
 
         //Baixar estoque Relatorio - Dia
         $buscarInformacoesBaixas = DB::table('relatorios')
             ->where('opcao', '=', 'remove')
             ->where('data', '=' , date('Y-m-d'))
-            ->get();
+            ->paginate(15);
 
         $produtosInformacao = DB::table('produtos')->get();
+        $produtosInformacaoCountBaixas = DB::table('relatorios')->where('opcao','=', 'remove')->count();
+        $produtosInformacaoCountAdicionado = DB::table('relatorios')->where('opcao','=', 'add')->count();
 
         return view('dashboard', [
             'relatorioProdutoDia' => $buscarInformacoesProduto,
             'relatorioBaixasDia' => $buscarInformacoesBaixas,
-            'produtosInformacao' => $produtosInformacao
+            'produtosInformacao' => $produtosInformacao,
+            'countProdutosBaixas' => $produtosInformacaoCountBaixas,
+            'countProdutosAdicionado' => $produtosInformacaoCountAdicionado,
         ]);
     }
 
