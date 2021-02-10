@@ -28,7 +28,6 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/baixar-produtos', [ProdutosController::class, 'baixarProdutosEscrever'])->name('baixar_produtos_escrever'); #ok
 
     //Relatorios
-    Route::get('/relatorio/{id}', [RelatorioController::class, 'index'])->name('relatorio_id'); #wait
-    Route::get('/relatorios', [RelatorioController::class, 'listarRelatorios'])->name('relatorios'); #wait
+    Route::post('/relatorio/', [RelatorioController::class, 'buscarBaixa'])->name('relatorio_search'); #Ok
 
 });
