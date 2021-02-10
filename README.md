@@ -33,6 +33,7 @@ Essa url vai te ajudar a cadastrar um produto vou dar um exemplo em json
 <b> {"nome": "nome do produto", "quantidade": 10, "codigo_produto": 5}</b><br>
 O <b>codigo do produto</b> não pode ser igual, pois ele é uma identificação de SKU para cada produto.
 <br>
+<hr>
 
 <h4>Acessando o sistema</h4>
 Crie um banco com o nome desejado as configurações <b>InnoDB e uf8Unicode</b>,
