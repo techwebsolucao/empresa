@@ -13,4 +13,9 @@
 <div id="documentacao"></div>
 
 Esse sistema utiliza API para usos externos pode usar com o postman para testes esse
-<a href="#">link</a> aqui vai ser para baixar o banco de dados caso não queria utilizar o migration do laravel
+<a href="#">link</a> aqui vai ser para baixar o banco de dados caso não queria utilizar o migration do laravel.
+
+<br>
+<h5>Como usar a API</h5>
+http://localhost/api/baixar-produtos
+<br>Exemplo:
